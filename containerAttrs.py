@@ -15,7 +15,7 @@ class ContainerAttrs():
         self.attrs = self.container.attrs
 
         self.created = self.attrs['Created']
-        self.state = { k:self.attrs['State'][k] for k in state_list}
+        self.state = { k:self.attrs['State'][k] for k in state_list} # dict about state "Status", "Running", etc..
 
         self.since_created = dt.utcnow() - str_to_datetime(self.created)
         self.uptime = (dt.utcnow() - str_to_datetime(self.state["StartedAt"])) if (self.state['Running']) else 0
