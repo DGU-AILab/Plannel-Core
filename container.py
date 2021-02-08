@@ -12,7 +12,7 @@ class Container:
 
     def __str__(self):
         self.attrs = ContainerAttrs(self.hash)
-        return "hash : {}, entrypoint : {}, image : {}, created : {}, since_created : {}, container_uptime : {}, \
-running_time : {}, exitcode : {}"\
+        return "hash : {}, entrypoint : {}, image : {}, created : {}, since_created : {}, startedAt : {}, \
+container_uptime : {}, exitcode : {}"\
             .format(self.hash, self.entrypoint, self.image, self.attrs.created, self.attrs.since_created, \
             self.attrs.state['StartedAt'], self.attrs.uptime, self.attrs.state['ExitCode'])
